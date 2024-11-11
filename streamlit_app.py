@@ -90,9 +90,7 @@ else:
         messages = [
             {
                 "role": "user",
-                "content": f"Here's the school course catalog: {document} \n\n---\n\n"
-                           f"Student's completed courses and information: {completed} \n\n"
-                           f"{question}",
+                "content": f"Here's a document: {document} \n\n---\n\n Based on this school course catalog and the student's completed courses and goals, create a personalized 4-year course plan. {completed}",
             }
         ]
 
@@ -105,4 +103,8 @@ else:
 
         # Stream the response to the app using `st.write_stream`.
         st.write_stream(stream)
+
+
+
+
 
