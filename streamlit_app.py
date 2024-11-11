@@ -39,7 +39,7 @@ st.write("You selected:", option)
 # intended major
 option = st.selectbox(
     "what is your first choice of prefered major",
-    ("Business Administration," "Psychology," "Nursing," "Biology," "Education," "Computer Science," "Communication," "Criminal Justice," "Marketing," "Engineering," "English," "Political Science," "Economics," "History," "Finance," "Accounting," "Graphic Design," "Sociology," "Public Health," "Environmental Science," "Kinesiology," "Pharmacy," "Art," "Physics," "Chemistry," "Music," "Theatre," "Mathematics," "Anthropology," "Social Work," "Architecture," "International Relations," "Film Studies," "Culinary Arts," "Agricultural Science," "Veterinary Science," "Pre-Med," "Biochemistry," "Physical Therapy," "Philosophy," "Religious Studies," "Hospitality Management," "Statistics," "Linguistics," "Sports Management," "Fashion Design," "Forestry," "Geography," "Interior Design"),
+    ("Business Administration", "Psychology", "Nursing", "Biology", "Education", "Computer Science", "Communication", "Criminal Justice", "Marketing", "Engineering", "English", "Political Science", "Economics", "History", "Finance", "Accounting", "Graphic Design", "Sociology", "Public Health", "Environmental Science", "Kinesiology", "Pharmacy", "Art", "Physics", "Chemistry", "Music", "Theatre", "Mathematics", "Anthropology", "Social Work", "Architecture", "International Relations", "Film Studies", "Culinary Arts", "Agricultural Science", "Veterinary Science", "Pre-Med", "Biochemistry", "Physical Therapy", "Philosophy", "Religious Studies", "Hospitality Management", "Statistics", "Linguistics", "Sports Management", "Fashion Design", "Forestry", "Geography", "Interior Design"),
     index=None,
     placeholder="Select major...",
 )
