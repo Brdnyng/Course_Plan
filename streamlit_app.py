@@ -52,9 +52,8 @@ import streamlit as st
 from openai import OpenAI
 
 # Show title and description.
-st.title("📄 Document question answering")
+st.title("📄 Upload your school course catalogue/graduation requirements")
 st.write(
-    "Upload a document below and ask a question about it – GPT will answer! "
     "To use this app, you need to provide an OpenAI API key, which you can get [here](https://platform.openai.com/account/api-keys). "
 )
 
@@ -75,20 +74,25 @@ else:
     )
 
     # Ask the user for a question via `st.text_area`.
-    question = st.text_area(
-        "Now ask a question about the document!",
-        placeholder="Can you give me a short summary?",
+    completed = st.text_area(
+        "Enter your COMPLETED courses for math and science",
+        placeholder="E.g., Algebra 2, Chemistry, Biology ",
         disabled=not uploaded_file,
     )
 
-    if uploaded_file and question:
+    # the prewritten prompt to chat gpt
+    question = "Based on this school course catalog and the student's completed courses and goals, create a personalized 4-year course plan."
+
+    if uploaded_file and completed:
 
         # Process the uploaded file and question.
         document = uploaded_file.read().decode()
         messages = [
             {
                 "role": "user",
-                "content": f"Here's a document: {document} \n\n---\n\n {question}",
+                "content": f"Here's the school course catalog: {document} \n\n---\n\n"
+                           f"Student's completed courses and information: {completed} \n\n"
+                           f"{question}",
             }
         ]
 
