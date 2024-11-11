@@ -1,4 +1,4 @@
-import streamlit as st
+oimport streamlit as st
 
 st.title("Student Information")
 
@@ -74,15 +74,13 @@ else:
     )
 
     # Ask the user for a question via `st.text_area`.
-    completed = st.text_area(
+    question = st.text_area(
         "Enter your COMPLETED courses for math and science",
         placeholder="E.g., Algebra 2, Chemistry, Biology ",
         disabled=not uploaded_file,
     )
 
-    # the prewritten prompt to chat gpt
-    question = "Based on this school course catalog and the student's completed courses and goals, create a personalized 4-year course plan."
-
+   
     if uploaded_file and completed:
 
         # Process the uploaded file and question.
@@ -90,7 +88,7 @@ else:
         messages = [
             {
                 "role": "user",
-                "content": f"Here's a document: {document} \n\n---\n\n Based on this school course catalog and the student's completed courses and goals, create a personalized 4-year course plan. {completed}",
+                "content": f"Here's a document: {document} \n\n---\n\n {question}",
             }
         ]
 
